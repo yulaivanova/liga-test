@@ -125,7 +125,13 @@
   }
 }
 
-.promo-block__inner svg path#recolor {  //iD необходим для стилизации части svg
+.promo-block__inner svg path#recolor-flag,
+.promo-block__inner svg path#recolor-lightning-1,
+.promo-block__inner svg path#recolor-lightning-2,
+.promo-block__inner svg path#recolor-lightning-3,
+.promo-block__inner svg path#recolor-lightning-4,
+.promo-block__inner svg path#recolor-sparkle-1,
+.promo-block__inner svg path#recolor-sparkle-2 {  //iD необходим для стилизации части svg
   @include viewport--sm {
     fill: $color-default-white;
   }
