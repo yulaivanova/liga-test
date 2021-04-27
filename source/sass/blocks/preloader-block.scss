@@ -1,0 +1,75 @@
+.preloader-block {
+  display: none;
+
+  background-color: $color-default-white;
+
+  @include viewport--sm {
+    cursor: pointer;
+  }
+}
+
+.preloader-block.modal--active {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 99;
+}
+
+.preloader-block--nojs.modal--active {
+  display: none;
+}
+
+.preloader-block svg {
+  display: block;
+
+  margin: 0 auto;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition: opacity $default-transition-settings;
+
+  width: 100%;
+  max-width: 800px;
+
+  @include viewport--sm {
+    max-width: 550px;
+    height: 70px;
+  }
+}
+
+.preloader-block p {
+  position: absolute;
+  bottom: 100px;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  margin: 0;
+
+  font-size: 24px;
+  line-height: 22px;
+
+  transition: opacity $default-transition-settings;
+
+  &:last-of-type {
+    display: none;
+  }
+
+  @include viewport--sm {
+    &:first-of-type {
+      display: none;
+    }
+
+    &:last-of-type {
+      display: inline;
+    }
+  }
+}

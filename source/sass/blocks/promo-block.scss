@@ -1,0 +1,147 @@
+.promo-block {
+  padding-top: 37px;
+  padding-bottom: 192px;
+
+  transition: opacity $default-transition-settings;
+
+  background-image: url("../img/svg/a-bg.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 664px 100%;
+
+  @include viewport--sm {
+    position: relative;
+    left: -35px;
+    width: calc(100% + 70px);
+
+    padding-top: 0;
+
+    background-image: none;
+  }
+}
+
+.promo-block--nojs .promo-block__wrapper {
+  @include viewport--sm {
+    flex-direction: column;
+  }
+}
+
+.promo-block--nojs .promo-block__inner {
+  @include viewport--sm {
+    position: relative;
+    left: 0;
+    height: auto;
+  }
+}
+
+.promo-block__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.promo-block--animation {
+  opacity: 0;
+}
+
+.promo-block__inner {
+  padding-bottom: 12px;
+
+  @include viewport--sm {
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    transition: transform $modal-transition-settings;
+
+    z-index: 99;
+
+    background-color: $color-neon-blue;
+
+    height: 100%;
+    width: 100%;
+
+    cursor: pointer;
+  }
+}
+
+.promo-block__inner .modal__overlay {
+  @include viewport--sm {
+    padding-top: 161px;
+  }
+}
+
+.promo-block__inner.modal--active {
+  @include viewport--sm {
+    opacity: 1;
+    transform: translateX(10000px);
+  }
+}
+
+.promo-block__title {
+  margin-right: 40px;
+
+  max-width: 562px;
+
+  @include viewport--sm {
+    height: 100vh;
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    margin-right: 0;
+    padding-bottom: 69px;
+    padding-left: 35px;
+  }
+}
+
+.promo-block__title h1 {
+  font-size: 96px;
+  line-height: 96px;
+  font-weight: 400;
+
+  color: $color-neon-blue;
+
+  margin: 0;
+
+  @include viewport--sm {
+    margin-bottom: 80px;
+  }
+}
+
+.promo-block__inner svg {
+  max-width: 316px;
+  width: 100%;
+
+  margin-bottom: 28px;
+
+  @include viewport--sm {
+    display: block;
+    margin: 0 auto 37px;
+    width: auto;
+  }
+}
+
+.promo-block__inner svg path#recolor {  //iD необходим для стилизации части svg
+  @include viewport--sm {
+    fill: $color-default-white;
+  }
+}
+
+.promo-block__inner p {
+  font-size: 30px;
+  line-height: 40px;
+
+  margin: 0;
+
+  @include viewport--sm {
+    color: $color-default-white;
+
+    max-width: 350px;
+
+    margin: 0 auto;
+  }
+}

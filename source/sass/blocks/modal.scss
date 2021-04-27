@@ -1,0 +1,10 @@
+.modal__overlay {
+  @include viewport--sm {
+    height: 100vh;
+  }
+}
+
+.modal--preload svg,
+.modal--preload p {
+  opacity: 0;
+}
